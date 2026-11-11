@@ -1,0 +1,172 @@
+/* Custom properties */
+:root {
+    --accent-color: #800000;
+    --gradient-color: #f6bb73;
+}
+
+/* Reset margins and padding; include borders in element dimensions */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Default and fluid page styles */
+body {
+    width: 80%;
+    max-width: 1024px;
+    margin: 0 auto;
+    border: 2px solid var(--accent-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(90% + .2vw);
+    line-height: 1.5;
+}
+
+h1, h2, h3, p, ul {
+    padding: .25em 0;
+}
+
+h1 { font-size: 150%; }
+
+h2 {
+    font-size: 130%;
+    color: var(--accent-color);
+}
+
+h3 { font-size: 105%; }
+
+ul { margin-left: 2em; }
+
+a:hover, a:focus {
+    color: var(--accent-color);
+    font-style: italic;
+}
+
+/* Header */
+header {
+    border-bottom: 2px solid var(--accent-color);
+    line-height: 1.2;
+    background-image: linear-gradient(
+        30deg,
+        var(--gradient-color) 0%,
+        white 30%,
+        white 65%,
+        var(--gradient-color) 100%
+    );
+}
+
+header h2 {
+    font-size: 175%;
+    padding-top: .5em;
+}
+
+header h3 {
+    font-size: 130%;
+    font-style: italic;
+    padding-bottom: 1em;
+}
+
+header img {
+    float: left;
+    width: 8%;
+    min-width: 40px;
+    max-width: 80px;
+    height: auto;
+    margin: .75em 1em;
+}
+
+/* Two-column home page and speaker-page layout */
+main {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5em;
+    padding: 1em;
+}
+
+aside {
+    flex: 0 0 25%;
+    min-width: 0;
+}
+
+section {
+    flex: 1 1 75%;
+    min-width: 0;
+}
+
+aside h2 {
+    font-size: 125%;
+}
+
+aside img {
+    display: block;
+    width: 75%;
+    min-width: 40px;
+    max-width: 75px;
+    height: auto;
+    border: 4px double var(--accent-color);
+    border-radius: 10px;
+    margin-bottom: .5em;
+}
+
+article.featured {
+    border-top: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+blockquote {
+    font-style: italic;
+    padding: .5em 1em;
+}
+
+/* Featured speaker on the home page */
+.featured {
+    padding: .5em 0;
+    overflow: auto;
+}
+
+.featured img,
+.speaker img {
+    float: right;
+    width: 40%;
+    min-width: 100px;
+    max-width: 250px;
+    height: auto;
+    border: 4px double var(--accent-color);
+    border-radius: 10px;
+    margin: 0 0 1em 1em;
+}
+
+/* Speaker biography page */
+.speaker h1 { color: var(--accent-color); }
+.speaker h2 { color: black; }
+.speaker p { padding: .5em 0; }
+
+/* Footer */
+footer {
+    background-color: var(--accent-color);
+}
+
+footer p {
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+/* Emphasized 75 in the header */
+.large { font-size: 125%; }
+
+/* Keep the layout usable on narrow screens */
+@media (max-width: 600px) {
+    body { width: 96%; }
+    main { gap: .75em; padding: .75em; }
+    aside { flex-basis: 32%; }
+    section { flex-basis: 68%; }
+    header h2 { font-size: 145%; }
+    header h3 { font-size: 110%; }
+    .featured img, .speaker img {
+        float: none;
+        display: block;
+        width: 70%;
+        margin: .5em auto;
+    }
+}
